@@ -26,25 +26,39 @@ require_once 'loginController.php'
                     </div>
                     <div class="login-banner">
                         <input type="submit" id="btn-cnx" name="cnx"  value="Connexion">
-                        <?php if (isset($connexionError)): ?>
-                            <script>alert('Connexion impossible! Email ou mot de pass incorrect!')</script>
-                        <?php endif ?>
-                        <?php  unset($connexionError) ?>
+                        <?php
+                        if( !empty($_SESSION["flashCnx"] )){
+                            echo $_SESSION["flashCnx"];
+                        }
+                        unset($_SESSION['flashCnx']);
+                        ?>
                     </div>
                 </div>
 
             </form>
         </div>
-
+        <div class="flash">
+        <?php
+        if( !empty($_SESSION["flashReg"] )){
+            echo $_SESSION["flashReg"];
+        }
+        unset($_SESSION['flashReg']);
+        ?>
+        </div>
+        <div class="flashOK">
+            <?php
+            if( !empty($_SESSION["flashRegOK"] )){
+                echo $_SESSION["flashRegOK"];
+            }
+            unset($_SESSION['flashRegOK']);
+            ?>
+        </div>
         <div id="register_body">
             <form action="loginController.php" method="post">
                 <div id="title_register">
                     <h2>Inscription</h2>
                     <p>C'est gratuit (et ça le restera toujours)</p>
-                    <?php if (isset($inscriptionError)): ?>
-                        <script>alert('Echec de l\'inscription! Vos informations sont erronées!')</script>
-                    <?php endif ?>
-                    <?php  unset($inscriptionError) ?>
+
                 </div>
                 <div id="register-section">
                     <div class="identity">
@@ -91,6 +105,7 @@ require_once 'loginController.php'
                 </div>
 
                 <div class="div_btn-register">
+
                     <input type="submit" class="btn-register" name="inscription" value="Inscription">
                 </div>
             </form>

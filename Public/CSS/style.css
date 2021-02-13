@@ -168,3 +168,24 @@ padding: 10px;
     font-size: 11px;
 }
 
+.flash{
+text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    background: lightcoral;
+    color: white;
+    border-radius: 2px;
+    width: 20%;
+
+}
+
+.flashOK{
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    background: #96d77c;
+    color: white;
+    border-radius: 2px;
+    width: 20%;
+
+}
