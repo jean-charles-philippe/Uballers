@@ -1,0 +1,170 @@
+small{
+    display: block;
+}
+
+label{
+    margin: 10px;
+    font-weight: bold;
+}
+
+#title_register{
+    padding-left: 40px;
+
+}
+
+#cnx_banner{
+    background: #2872c2;
+    padding: 10px;
+}
+
+#cnx_banner>label{
+    background: #2872c2;
+
+}
+
+#register-body{
+    padding: 30px;
+}
+
+#register-section{
+
+    justify-content: center;
+}
+
+#log-form{
+    border-radius: 5px;
+    background: rgb(236,236,240);
+    background: linear-gradient(180deg, rgba(236,236,240,1) 23%, rgba(227,228,231,1) 51%, rgba(244,244,244,1) 91%, rgba(251,251,251,1) 100%);
+    margin: auto;
+    height: auto;
+}
+#btn-cnx{
+    background: #4182c8;
+    color: white;
+    padding: 10px;
+    border: solid 1px #1855ca;
+    border-radius: 2px;
+    width: 100px;
+}
+
+#dateBirthHelp:link{
+    color: darkgray;
+    text-decoration: none;
+}
+#dateBirthHelp:hover{
+    color: #858484;
+    text-decoration: none;
+}
+
+#btn-cnx:hover{
+    background: #245fcd;
+}
+
+.identity{
+    display: flex;
+    justify-content: center;
+}
+
+.identity-input{
+    width: 100%;
+}
+
+
+.input-identity{
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+    width: 80%;
+    border-radius: 2px;
+    border: solid 1px #ececec;
+    background: #f8f8f8;
+}
+
+.error{
+    background: indianred;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.info-compte{
+    color: darkgray;
+}
+.info-compte:link{
+    text-decoration: none;
+}
+
+.info-compte:hover{
+    color: white;
+}
+
+.label-login{
+    color: white;
+    font-weight: normal;
+}
+
+.input-register{
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+    width: 90%;
+    border-radius: 2px;
+    border: solid 1px #ececec;
+    background: #f8f8f8;
+}
+
+.input-register:focus{
+
+    background: #eaeaea;
+    opacity: 0.8;
+}
+
+.input-banner{
+
+display: flex;
+}
+
+.emailCnx{
+    border: none;
+}
+
+.login-banner{
+    flex-grow: 1;
+}
+
+
+.dateBirth{
+    padding: 20px;
+}
+
+.radio{
+padding: 10px;
+}
+
+.btn-register {
+    background: darkcyan;
+    color: white;
+    border-radius: 2px;
+    border: #2672ca;
+    border-inline: solid 2px #a5d2d2;
+    padding: 10px;
+    margin-top: 15px;
+    width: 150px;
+}
+
+.btn-register:hover{
+    background: #175151;
+}
+.div_btn-register{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.conditions{
+
+    width: auto ;
+    font-size: 11px;
+}
+
