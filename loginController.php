@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'cnx.php';
+require_once 'loginModel.php';
 global $pdo;
 
 
@@ -9,17 +9,15 @@ $passwordCnx = filter_input(INPUT_POST, 'passwordCnx', FILTER_SANITIZE_STRING);
 $cnx = filter_input(INPUT_POST, 'cnx', FILTER_SANITIZE_STRING);
 
 if ($cnx == "Connexion"){
-    $prep = $pdo->prepare('SELECT * FROM users WHERE email= :email');
-    $prep->bindValue('email', $emailCnx);
-    $prep->execute();
-    $user = $prep->fetch();
-
+        $user = getLogin($emailCnx);
     if (password_verify($passwordCnx, $user["password"])){
         session_start();
         $_SESSION["email"]=$emailCnx;
         header("Location: accueil.php");
     }else $connexionError = "ON";
 }
+
+
 
 $firstNameRegister = filter_input(INPUT_POST, 'firstNameRegister', FILTER_SANITIZE_STRING);
 $nameRegister = filter_input(INPUT_POST, 'nameRegister', FILTER_SANITIZE_STRING);
@@ -31,18 +29,10 @@ $dateRegister = filter_input(INPUT_POST, 'dateRegister', FILTER_SANITIZE_STRING)
 $sexRegister = filter_input(INPUT_POST, 'sexRegister', FILTER_SANITIZE_NUMBER_INT);
 $inscription = filter_input(INPUT_POST, 'inscription', FILTER_SANITIZE_STRING);
 
-
-
 if ($inscription == "Inscription"){
     if ($emailRegister1==$emailRegister2) {
-        $prep = $pdo->prepare('INSERT INTO users (firstName, name, email, password, birthDate, sex ) VALUES (:firstNameRegister, :nameRegister, :emailRegister2, :passwordRegister, :dateRegister, :sexRegister )');
-        $prep->bindParam(':firstNameRegister', $firstNameRegister);
-        $prep->bindParam(':nameRegister', $nameRegister);
-        $prep->bindParam(':emailRegister2', $emailRegister2);
-        $prep->bindParam(':passwordRegister', $passwordRegisterHashed);
-        $prep->bindParam(':dateRegister', $dateRegister);
-        $prep->bindParam(':sexRegister', $sexRegister);
-        $prep->execute();
+        setRegister($firstNameRegister, $nameRegister, $emailRegister2,$passwordRegisterHashed,$dateRegister,$sexRegister);
+        header("Location: index.php");
     }else $inscriptionError = "ON";
 }
 

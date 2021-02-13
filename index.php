@@ -45,6 +45,7 @@ require_once 'loginController.php'
                         <script>alert('Echec de l\'inscription! Vos informations sont erronées!')</script>
                     <?php endif ?>
                     <?php  unset($inscriptionError) ?>
+
                 </div>
                 <div id="register-section">
                     <div class="identity">
